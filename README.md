@@ -54,6 +54,10 @@ Depending on the trigger condition used, this input is:
 
 **Optional** Set to `true` to disable the creation of pull request reviews, and use the status of the check instead.
 
+### `image`
+
+**Optional** The Docker image to use for running the action. Defaults to 'Dockerfile'.
+
 ## Example usage
 
 Normally, in your project you would want to allow PRs both from the same repository as well as forks. In that case, you must use the trigger condition `pull_request_target`, as described in this example:

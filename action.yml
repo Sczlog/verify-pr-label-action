@@ -1,6 +1,6 @@
-name: 'Verify Pull Request Labels'
-author: 'Jesus Vasquez'
-description: 'Verify that the PR has a valid label'
+name: 'PR Label Force Validator'
+author: 'Sczlog'
+description: 'Check if the PR has valid labels'
 branding:
   icon: 'check'
   color: 'gray-dark'
@@ -21,9 +21,13 @@ inputs:
   disable-reviews:
     description: 'Should the action post reviews on PRs'
     required: false
+  image:
+    description: 'The image to use'
+    required: false
+    default: 'Dockerfile'
 runs:
   using: 'docker'
-  image: 'Dockerfile'
+  image: '${{ inputs.image }}'
   args:
     - ${{ inputs.github-token }}
     - ${{ inputs.valid-labels }}
